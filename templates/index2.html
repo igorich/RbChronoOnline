@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>RACE RESULTS | Список соревнований</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/normalize.css">
+    <link rel="stylesheet" href="static/css/style.css">
+  </head>
+  <body>
+    <div class="list-container">
+		{% for r in races %}
+		  <div class="race-container">
+			<div class="left-cell">
+			  <div class="race-logo"><img src="static/img/logo.png" alt="" width="200px"></div>
+			</div>
+			<div class="right-cell">
+			  <div class="top-cell">
+				<h2>{{ r.Name }}</h2>
+			  </div>
+			  <div class="bottom-cell">
+				<div class="date-location">
+				  <span class="race-time">{{ r.RaceStartTime }}</span>
+				  <span class="race-site">Yaroslavl Raceway</span>
+				</div>
+				<div class="description">
+				  <p>{{ r.Description }} <a href="">Регламент гонки</a> и <a href="">Расписание дня</a></p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		{% endfor %}
+    </div>
+  </body>
+</html>

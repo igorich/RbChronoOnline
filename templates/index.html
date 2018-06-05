@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Результаты гонок</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+<!--    <link href="/css/main.css" rel="stylesheet">-->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style id="holderjs-style" type="text/css"></style>
+    <style>@media print {
+            #ghostery-purple-box {
+                display: none !important
+            }
+        }
+
+    .container .row .carousel_block{
+        padding-left: 0px;
+    }
+    .carousel-inner div{
+        width: 250px;
+        height: 50px;
+        font-size: 18px;
+        line-height: 50px;
+        margin: 0 auto;
+        text-align: center;
+        display: inline-block;
+    }
+        #carousel{
+            border: 1px solid #c2c2c2;
+            margin: 10px 0;
+            background-color: #f3f3f3;
+            text-align: center;
+        }
+
+        #carousel .glyphicon{
+            top: -20px;
+            cursor: pointer;
+        }
+
+        .item.slick-slide {
+            cursor: pointer;
+        }
+        .item.slick-slide:focus {
+            outline-style: none;
+        }
+    </style>
+</head>
+<body>
+	<div class="site-wrapper">
+
+		<div class="site-wrapper-inner">
+
+			<div class="container">
+				<div class="row">
+					<div class="carousel_block  col-md-4">
+						<div id="carousel" class="carousel-inner"  style="margin-bottom: 10px;">
+						    {% for r in races %}
+                                id: {{ r.Id }}
+                                Name: {{ r.Name }}
+                                Start time: {{ r.RaceStartTime }}
+                                <br>
+                            {% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
