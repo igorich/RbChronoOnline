@@ -1,0 +1,163 @@
+ul,
+h1,
+h2,
+body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #000000;
+}
+
+.table-container{
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 80px 0;
+}
+
+table{
+  display: inline-block;
+  border-collapse: collapse;
+  /* border: 1px solid #b4b4b4; */
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+th,
+td{
+  padding: 5px;
+}
+
+th{
+  background-color: #818181;
+  color: #000000;
+  border: 1px solid #b4b4b4;
+}
+
+.main-crew-cell{
+  width: 20%;
+}
+
+.main-time-cell{
+  text-align: center;
+}
+
+.main-time-cell img{
+  display: inline-block;
+}
+
+.common:nth-child(odd) td{
+  background-color: #323232;
+}
+
+.common:hover td{
+  background-color: #35ff69;
+  color: #000000;
+}
+
+.time-cell{
+  color: #00ff42;
+}
+
+.gap-cell{
+  color: #e4ff00;
+}
+
+.leader-cell{
+  color: #ff0000;
+}
+
+.table-footer{
+  background-color: #818181;
+  text-align: right;
+  color: #000000;
+}
+
+.list-container{
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 100px;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.race-container{
+  display: flex;
+  text-align: left;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 3px solid #818181;
+}
+
+.right-cell{
+  width: 80%;
+}
+
+.top-cell{
+  text-align: center;
+}
+
+.top-cell h2{
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: normal;
+  color: red;
+}
+
+.bottom-cell{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.date-location{
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #00ff42;
+}
+
+.date-location span{
+  display: block;
+  position: relative;
+}
+
+.date-location span:first-child{
+  margin-bottom: 12px;
+}
+
+.race-time::before{
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/calendar.png);
+  background-size: contain;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.race-site::before{
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/map.png);
+  background-size: contain;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.description{
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: normal;
+  color: #ffffff;
+  width: 70%;
+}
