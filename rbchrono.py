@@ -5,15 +5,30 @@ import datetime
 
 #import repository.result_repository
 from repository.race_repository import *
+from repository.result_repository import *
 
 #export FLASK_DEBUG=1
 app = Flask(__name__)
+result_repository = ResultRepository()
 
+'''
+UI, races and results
+'''
 @app.route('/')
 def index():
     r = getAllRaces()
-    return render_template('index2.html', races=r)
+    return render_template('racelist.html', races=r)
 
+@app.route('/raceview/<int:raceId>', methods=['GET'])
+def showRace(raceId):
+    race = getRace(race_id)
+    content = result_repository.resultsList(race_id)
+    #results = result_
+    return render_templete('results.html', race = race, results = content)
+
+'''
+stuff
+'''
 @app.route('/spec')
 def spec():
     swag = swagger(app)
@@ -36,7 +51,7 @@ def log(value):
     file.close()
 
 '''
-race_controller
+API race_controller
 '''
 @app.route('/race/', methods=['GET'])
 def getAllRace():
@@ -64,7 +79,7 @@ def addRace():
     return 'add new race with id ' + newId
 
 '''
-result_controller
+API result_controller
 '''
 @app.route('/race/<int:raceId>/results/', methods=['GET'])
 def raceResults(raceId):

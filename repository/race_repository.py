@@ -23,11 +23,6 @@ def getAllRaces():
         cur.execute("SELECT Id, Name, RaceStartTime FROM Races")
         res = []
         for row in cur.fetchall():
-            #obj = {}
-            #log(str(row))
-            #obj['Id'] = row['Id']
-            #obj['Name'] = row['Name']
-            #obj['RaceStartTime'] = row['Race']
             res.append(row)
         return res
 
