@@ -8,11 +8,11 @@ class ResultRepository:
     #def __init__(self):
     def resultsList(raceId):
         with db.cursor() as cur:
-            cur.execute('SELECT r.Id, r.CompetitorId, r.RaceId, r.ResultText, r.ResultTime, r.StartNumber'
-                        + ' c.Name, c.Car, c.Class'
+            cur.execute('SELECT r.Id, r.CompetitorId, r.RaceId, r.ResultText, r.ResultTime, '
+                        + ' c.StartNumber, c.Name, c.CarModel, c.ClassText '
                         + 'FROM Results as r '
                         + 'LEFT JOIN Competitors as c ON r.CompetitorId = c.Id '
-                        + 'WHERE RaceIs = {0}'
+                        + 'WHERE RaceId = {0}'
                 .format(raceId))
             res = []
             for row in cur.fetchall():
